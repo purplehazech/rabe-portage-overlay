@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE repositories SYSTEM "/dtd/repositories.dtd">
+<repositories version="1.0">
+    <repo quality="experimental" status="unofficial">
+        <name>rabe-portage-overlay</name>
+        <description>Packages for rabe.ch</description>
+        <homepage>https://github.com/purplehazech/rabe-portage-overlay</homepage>
+        <owner>
+            <email>purpleteam@purplehaze.ch</email>
+        </owner>
+        <source type="tar">http://intranet.rabe.ch/portage-overlay/overlay.tar.bz2</source>
+        <source type="git">git://github.com/purplehazech/rabe-portage-overlay.git</source>
+    </repo>
+</repositories>
