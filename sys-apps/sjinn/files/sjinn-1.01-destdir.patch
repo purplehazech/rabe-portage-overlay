@@ -1,0 +1,27 @@
+--- Makefile.orig	2007-05-27 00:38:43.000000000 +0200
++++ Makefile	2009-07-31 12:39:05.408752147 +0200
+@@ -8,10 +8,10 @@
+ TARGET=rs232
+ S_LINK=sjinn
+ 
+-prefix=/usr/local
++prefix=${DESTDIR}
+ exec_prefix=${prefix}
+ bindir=${exec_prefix}/bin
+-mandir=${prefix}/man/man1
++mandir=${prefix}/usr/share/man/man1
+ 
+ rs232: rs232opts.o rs232main.o rs232ctl.o 
+ 	$(CC) -o $(TARGET) rs232opts.o rs232main.o rs232ctl.o  $(CFLAGS) $(INC) $(LIB)
+@@ -26,9 +26,11 @@
+ 	$(CC) -c rs232ctl.c  $(CFLAGS) $(INC)
+ 
+ install:
++	mkdir -p ${bindir}
+ 	$(INSTALL) $(TARGET) ${bindir}
+ 	rm -f ${bindir}/$(S_LINK)
+ 	ln -s ${bindir}/$(TARGET) ${bindir}/$(S_LINK)
++	mkdir -p ${mandir}
+ 	$(INSTALL) $(TARGET).1.gz ${mandir}/$(TARGET).1.gz
+ 	rm -f ${mandir}/$(S_LINK).1.gz
+ 	ln -s ${mandir}/$(TARGET).1.gz ${mandir}/$(S_LINK).1.gz

@@ -1,0 +1,11 @@
+--- Makefile.orig	2009-07-31 14:49:53.838517318 +0200
++++ Makefile	2009-07-31 14:50:04.979034662 +0200
+@@ -1,6 +1,7 @@
+ CC=gcc
+-CFLAGS=-pg -Wall
++#CFLAGS=-pg -Wall
+ #CFLAGS=-g
++CFLAGS=-Wall
+ LIB=-lm
+ INC=
+ INSTALL=/usr/bin/install -c
