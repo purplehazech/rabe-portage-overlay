@@ -1,0 +1,28 @@
+diff -Naur zabbix-1.8.3-orig/frontends/php/include/menu.inc.php zabbix-1.8.3/frontends/php/include/menu.inc.php
+--- zabbix-1.8.3-orig/frontends/php/include/menu.inc.php	2010-08-16 10:19:33.000000000 +0200
++++ zabbix-1.8.3/frontends/php/include/menu.inc.php	2010-12-11 03:34:58.000000000 +0100
+@@ -218,6 +218,9 @@
+ 				array('url'=>'locales.php',
+ 						'label'=>S_LOCALES
+ 					),
++				array('url'=>'snmp_builder.php',
++						'label'=>'SNMP Builder'
++					),
+ 				array('url'=>'instal.php',
+ 						'label'=>S_INSTALLATION,
+ 						'sub_pages'=>array('setup.php','warning.php')
+diff -Naur zabbix-1.8.3-orig/frontends/php/jsLoader.php zabbix-1.8.3/frontends/php/jsLoader.php
+--- zabbix-1.8.3-orig/frontends/php/jsLoader.php	2010-08-16 10:19:33.000000000 +0200
++++ zabbix-1.8.3/frontends/php/jsLoader.php	2010-12-11 03:33:54.000000000 +0100
+@@ -40,7 +40,10 @@
+ 	'class.curl.js' => '',
+ 	'class.rpc.js' => '',
+ 	'class.pmaster.js' => '',
+-	'class.cviewswitcher.js' => ''
++	'class.cviewswitcher.js' => '',
++	'Tree.js' => '../snmp_builder/',
++	'snmp_builder.js' => '../snmp_builder/',
++	'DynTable.js' => '../snmp_builder/'
+ );
+ 
+ $tranStrings = array(
