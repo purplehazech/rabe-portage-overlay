@@ -11,3 +11,4 @@ old_ebuild=$(find $tree_location -name '*.ebuild' -printf "%T@ %Tx %TX %p\n" | s
 new_ebuild=$tree_location/$(echo $tree_location | cut -f2 -d'/')-$new_version'.ebuild'
 
 git mv $old_ebuild $new_ebuild
+git commit -m 'auto version bump'
