@@ -20,5 +20,6 @@
 	    <name>Vadim Kuznetsov</name>
 	</owner>
         <source type="git">git://git.csc.ncsu.edu/gentoo-vnkuznet-overlay.git</source>
+	<source type="tar">http://intranet.rabe.ch/portage-overlay/gentoo-vnkuznet-overlay.tar.bz2</source>
     </repo>
 </repositories>
