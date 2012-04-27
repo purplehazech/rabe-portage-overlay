@@ -11,4 +11,14 @@
         <source type="tar">http://intranet.rabe.ch/portage-overlay/overlay.tar.bz2</source>
         <source type="git">git://github.com/purplehazech/rabe-portage-overlay.git</source>
     </repo>
+    <!-- this repo has a pupppet dashboard ebuild and it doesn't seem to be in a layman repo -->
+    <repo>
+        <name>gentoo-vnkuznet-overlay</name>
+	<description></description>
+	<homepage>http://git.csc.ncsu.edu/gitweb/?p=gentoo-vnkuznet-overlay.git;a=summary</homepage>
+	<owner>
+	    <name>Vadim Kuznetsov</name>
+	</owner>
+        <source type="git">git://git.csc.ncsu.edu/gentoo-vnkuznet-overlay.git</source>
+    </repo>
 </repositories>
