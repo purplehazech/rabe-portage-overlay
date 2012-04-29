@@ -16,10 +16,13 @@ dev-php/pecl-gearman
 dev-php/PEAR-Console_Getopt"
 
 src_install() {
-	mkdir -p ${D}/usr/share/rabe-busmaster ${D}/usr/bin
+	mkdir -p ${D}/usr/share/rabe-busmaster ${D}/usr/bin ${D}/etc/busmaster
 	cp -r src ${D}/usr/share/rabe-busmaster
 	cp -r lib ${D}/usr/share/rabe-busmaster
+	cp -r etc/* ${D}/etc/busmaster/
 	cp -r bin/rabe-busmaster ${D}/usr/bin/
+
+	ln -s /etc/busmaster ${D}/usr/share/rabe-busmaster/etc
 	chown -R busmaster:busmaster ${D}/usr/share/puppet-infra-project
 	chmod -R ugo-w ${D}/usr/share/puppet-infra-project
 	chmod -R ugo=rx ${D}/usr/bin/rabe-busmaster
