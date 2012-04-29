@@ -12,7 +12,7 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="dev-lang/php
-dev-lang/pecl-gearman
+dev-php/pecl-gearman
 dev-php/PEAR-Console_Getopt"
 
 src_install() {
