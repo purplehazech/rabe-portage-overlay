@@ -11,7 +11,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="dev-lang/php"
+DEPEND="dev-lang/php
+dev-lang/pecl-gearman
+dev-php/PEAR-Console_Getopt"
 
 src_install() {
 	mkdir -p ${D}/usr/share/rabe-busmaster ${D}/usr/bin
