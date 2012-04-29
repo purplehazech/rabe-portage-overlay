@@ -20,5 +20,5 @@ src_install() {
 	cp -r bin/rabe-busmaster ${D}/usr/bin/
 	chown -R busmaster:busmaster ${D}/usr/share/puppet-infra-project
 	chmod -R ugo-w ${D}/usr/share/puppet-infra-project
-	chmod -R ugo-w ${D}/usr/bin/rabe-busmaster
+	chmod -R ugo=rx ${D}/usr/bin/rabe-busmaster
 }
