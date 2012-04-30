@@ -1,0 +1,33 @@
+# base
+
+# /usr/portage/profiles/base
+
+# /usr/portage/profiles/default/linux
+-*sys-apps/busybox
+
+# /usr/portage/profiles/releases
+
+# /usr/portage/profiles/releases/2008.0
+
+# /usr/portage/profiles/arch/amd64
+
+# /usr/portage/profiles/default/linux/amd64
+
+# /usr/portage/profiles/default/linux/amd64/2008.0
+
+# /usr/portage/profiles/features/multilib
+
+# /usr/portage/profiles/features/64bit-native
+
+# /usr/portage/profiles/arch/amd64/no-multilib
+
+# /usr/portage/profiles/default/linux/amd64/2008.0/no-multilib
+
+# /usr/local/portage/profiles/default/linux/amd64/2008.0/rabe.ch
+*app-portage/gentoolkit
+*sys-process/dcron
+*app-admin/syslog-ng
+*app-admin/logrotate
+*app-admin/localepurge
+*app-admin/puppet
+*app-admin/zabbix
