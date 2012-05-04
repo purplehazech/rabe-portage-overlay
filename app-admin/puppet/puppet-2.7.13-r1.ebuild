@@ -56,15 +56,14 @@ RDEPEND="${RDEPEND}
 
 SITEFILE="50${PN}-mode-gentoo.el"
 
-src_unpack() {
-	unpack ${A}
-	cd "${S}"
-	epatch "${FILESDIR}"/puppet-2.7.13-eixlocationfromeix.patch
-}
 
 pkg_setup() {
 	enewgroup puppet
 	enewuser puppet -1 -1 /var/lib/puppet puppet
+}
+
+src_prepare() {
+	epatch "${FILESDIR}"/puppet-2.7.13-eixlocationfromeix.patch
 }
 
 all_ruby_compile() {
