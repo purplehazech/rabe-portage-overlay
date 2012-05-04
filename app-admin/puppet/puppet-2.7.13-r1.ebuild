@@ -62,11 +62,10 @@ pkg_setup() {
 	enewuser puppet -1 -1 /var/lib/puppet puppet
 }
 
-src_prepare() {
-	epatch "${FILESDIR}"/puppet-2.7.13-eixlocationfromeix.patch
-}
 
 all_ruby_compile() {
+	epatch "${FILESDIR}"/puppet-2.7.13-eixlocationfromeix.patch
+
 	all_fakegem_compile
 
 	if use emacs ; then
