@@ -13,7 +13,8 @@ IUSE=""
 
 DEPEND="dev-lang/php
 dev-php/pecl-gearman
-dev-php/PEAR-Console_Getopt"
+dev-php/PEAR-Console_Getopt
+dev-php/PEAR-System_Daemon"
 
 src_install() {
 	mkdir -p ${D}/usr/share/rabe-busmaster ${D}/usr/bin ${D}/etc/busmaster
