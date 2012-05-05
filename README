@@ -1,4 +1,8 @@
-A quick dump of all our local portage overlays.
+A gentoo portage overlay for rabe.ch
+------------------------------------
 
-I plan on putting everything into one buig overlay and then
-hosting development of that out on github.
+This is a working overlay we use for integration and deployment at rabe.
+
+Find more documentation and information on the main project puppet-infra-project:
+
+https://github.com/purplehazech/puppet-infra-project
