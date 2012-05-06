@@ -7,7 +7,7 @@ EAPI=3
 USE_PHP="php5-3 php5-4"
 
 GITHUB_COMMIT="9e04bb5"
-S="${WORKDIR}/mkoppanen-php-zmq-${GITHUB_COMMIT}"
+PHP_EXT_S="${WORKDIR}/mkoppanen-php-zmq-${GITHUB_COMMIT}"
 
 inherit php-ext-pecl-r2
 
