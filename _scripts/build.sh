@@ -10,4 +10,4 @@ find . -name 'Manifest' -exec git add {} \;
 git commit -m 'auto update digests' 
 
 # pack what clients need
-tar --exclude=./README --exclude=./repositories.xml --exclude=./_scripts/ --exclude=./.git/ -cjf overlay.tar.bz2 ./
+tar --exclude=./README --exclude=./repositories.xml --exclude=./_scripts* --exclude=./.git* -cjf overlay.tar.bz2 ./
