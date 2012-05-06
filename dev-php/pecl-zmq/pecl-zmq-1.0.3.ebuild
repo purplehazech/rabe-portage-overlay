@@ -18,3 +18,6 @@ KEYWORDS="~amd64 ~x86"
 IUSE=""
 
 DEPEND="net-libs/zeromq"
+
+GITHUB_COMMIT="9e04bb5"
+S="${WORKDIR}/mkoppanen-php-zmq-${GITHUB_COMMIT}"
