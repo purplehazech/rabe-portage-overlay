@@ -6,6 +6,9 @@ EAPI=3
 
 USE_PHP="php5-3 php5-4"
 
+GITHUB_COMMIT="9e04bb5"
+S="${WORKDIR}/mkoppanen-php-zmq-${GITHUB_COMMIT}"
+
 inherit php-ext-pecl-r2
 
 DESCRIPTION="PHP bindings for 0MQ"
@@ -19,5 +22,4 @@ IUSE=""
 
 DEPEND="net-libs/zeromq"
 
-GITHUB_COMMIT="9e04bb5"
-S="${WORKDIR}/mkoppanen-php-zmq-${GITHUB_COMMIT}"
+
