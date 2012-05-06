@@ -10,7 +10,7 @@ inherit php-ext-pecl-r2
 
 DESCRIPTION="PHP bindings for 0MQ"
 HOMEPAGE="https://github.com/mkoppanen/php-zmq"
-SRC_URI="https://github.com/mkoppanen/php-zmq/zipball/${PV}->${P}.zip"
+SRC_URI="https://github.com/mkoppanen/php-zmq/zipball/${PV} -> ${P}.zip"
 
 LICENSE="BSD"
 SLOT="0"
