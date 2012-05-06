@@ -13,6 +13,7 @@ IUSE=""
 
 DEPEND="dev-lang/php
 dev-php/pecl-gearman
+dev-php/pecl-zmq
 dev-php/PEAR-Console_Getopt
 dev-php/PEAR-System_Daemon
 dev-php/PEAR-Log"
