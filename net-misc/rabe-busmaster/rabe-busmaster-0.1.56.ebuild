@@ -12,10 +12,8 @@ KEYWORDS="~amd64"
 IUSE=""
 
 DEPEND="dev-lang/php
-dev-php/pecl-gearman
 dev-php/pecl-zmq
 dev-php/PEAR-Console_Getopt
-dev-php/PEAR-System_Daemon
 dev-php/PEAR-Log"
 
 src_install() {
@@ -24,11 +22,14 @@ src_install() {
 	cp -r lib ${D}/usr/share/rabe-busmaster
 	cp -r etc/* ${D}/etc/busmaster/
 	mv ${D}/etc/busmaster/init.d ${D}/etc/
-	chmod u+x ${D}/etc/init.d/*
-	cp -r bin/rabe-busmaster ${D}/usr/bin/
+	#cp -r bin/rabe-busmaster ${D}/usr/bin/
+	mkdir ${D}/var/run/busmaster/
+	touch ${D}/var/run/busaster/.keep-rabe-busmaster
 
 	ln -s /etc/busmaster ${D}/usr/share/rabe-busmaster/etc
+
 	chown -R busmaster:busmaster ${D}/usr/share/puppet-infra-project
-	chmod -R ugo-w ${D}/usr/share/puppet-infra-project
-	chmod -R ugo=rx ${D}/usr/bin/rabe-busmaster
+	chmod u+x ${D}/etc/init.d/*
+	#chmod -R ugo-w ${D}/usr/share/puppet-infra-project
+	#chmod -R ugo=rx ${D}/usr/bin/rabe-busmaster
 }
