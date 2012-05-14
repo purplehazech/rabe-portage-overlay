@@ -23,6 +23,7 @@ src_install() {
 	cp -r src ${D}/usr/share/rabe-busmaster
 	cp -r lib ${D}/usr/share/rabe-busmaster
 	cp -r etc/* ${D}/etc/busmaster/
+	mv ${D}/etc/busmaster/init.d ${D}/etc/
 	cp -r bin/rabe-busmaster ${D}/usr/bin/
 
 	ln -s /etc/busmaster ${D}/usr/share/rabe-busmaster/etc
