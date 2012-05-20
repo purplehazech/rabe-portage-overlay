@@ -16,8 +16,8 @@ RDEPEND="$DEPEND"
 
 src_install() {
 	insinto /usr/share/php
-    doins library/Zend
+    doins -r library/Zend
 	insinto /usr/share/php/docs/
-	doins docs/Zend_Media
+	doins -r docs/Zend_Media
 }
 
