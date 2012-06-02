@@ -30,4 +30,4 @@
 *app-admin/logrotate
 *app-admin/localepurge
 *app-admin/puppet
-*net-analyser/zabbix
+*net-analyzer/zabbix
