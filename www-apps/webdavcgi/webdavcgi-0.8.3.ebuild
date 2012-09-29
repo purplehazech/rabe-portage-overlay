@@ -1,0 +1,87 @@
+# Copyright 1999-2012 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Header: $
+
+EAPI=4
+
+inherit toolchain-funcs webapp
+
+DESCRIPTION="WebDAV CGI is a Perl CGI for accessing and sharing files, or calendar/addressbooks via WebDAV."
+HOMEPAGE="http://webdavcgi.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+
+LICENSE="GPL-3"
+SLOT="0"
+WEBAPP_MANUAL_SLOT="yes"
+KEYWORDS="~amd64"
+IUSE="mysql postgres rcs samba +sqlite"
+
+DEPEND=""
+RDEPEND="${DEPEND}
+    dev-perl/Archive-Zip
+    dev-perl/PerlIO-gzip
+    dev-perl/TimeDate
+    dev-perl/XML-Simple
+    media-gfx/graphicsmagick[perl]
+    mysql? ( dev-perl/DBD-mysql )
+    perl-core/Module-Load
+    perl-gcpan/Quota
+    perl-gcpan/UUID-Tiny
+    postgres? ( dev-perl/DBD-Pg )
+    rcs? ( dev-perl/Rcs )
+    samba? ( perl-gcpan/Filesys-SmbClient )
+    sqlite? ( dev-perl/DBD-SQLite )
+    virtual/perl-CGI
+"
+
+need_httpd_cgi
+
+REQUIRED_USE="|| ( mysql postgres sqlite )"
+
+src_compile() {
+	local wrapper='webdavwrapper'
+
+	$(tc-getCC) ${LDFLAGS} ${CFLAGS} \
+		-o cgi-bin/${wrapper} \
+		helper/${wrapper}.c || die "compile ${wrapper} failed"
+}
+
+src_install() {
+	webapp_src_preinst
+
+	local htdocsDir='htdocs'
+	local cgiBinDir='cgi-bin'
+	local confDir='etc'
+
+	local installDirs="$confDir lib locale"
+
+	insinto "${MY_HTDOCSDIR}"
+	doins -r ${htdocsDir}/*
+
+	exeinto "${MY_CGIBINDIR}"
+	doexe ${cgiBinDir}/*
+
+
+	local currentDir
+    for currentDir in ${installDirs}; do
+		dodir "${MY_HOSTROOTDIR}/${currentDir}"
+		insinto "${MY_HOSTROOTDIR}/${currentDir}"
+		doins -r ${currentDir}/*
+	done
+
+
+	webapp_configfile ${MY_HOSTROOTDIR}/${confDir}/{webdav.conf-dist,mime.types}
+
+	use mysql && webapp_sqlscript mysql sql/mysql.sql 
+	use postgres && webapp_sqlscript postgres sql/postgresql.sql
+
+	dodoc CHANGELOG INSTALL LICENSE RELEASE TODO
+	dohtml -r doc/*
+
+	webapp_src_install
+
+	# In order to change the user and group ID at runtime, the webdavwrapper
+	# needs to be run as root (set-user-ID and set-group-ID bit)
+	fowners root:root ${MY_CGIBINDIR}/webdavwrapper
+	fperms 6755 ${MY_CGIBINDIR}/webdavwrapper
+}
