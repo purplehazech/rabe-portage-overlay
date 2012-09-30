@@ -39,18 +39,18 @@ need_httpd_cgi
 REQUIRED_USE="|| ( mysql postgres sqlite )"
 
 src_compile() {
-	local wrapper='webdavwrapper'
+	webDavWrapper='webdavwrapper'
+	cgiBinDir='cgi-bin'
 
 	$(tc-getCC) ${LDFLAGS} ${CFLAGS} \
-		-o cgi-bin/${wrapper} \
-		helper/${wrapper}.c || die "compile ${wrapper} failed"
+		-o ${cgiBinDir}/${webDavWrapper} \
+		helper/${webDavWrapper}.c || die "compile ${webDavWrapper} failed"
 }
 
 src_install() {
 	webapp_src_preinst
 
 	local htdocsDir='htdocs'
-	local cgiBinDir='cgi-bin'
 	local confDir='etc'
 
 	local installDirs="$confDir lib locale"
@@ -80,6 +80,6 @@ src_install() {
 
 	# In order to change the user and group ID at runtime, the webdavwrapper
 	# needs to be run as root (set-user-ID and set-group-ID bit)
-	fowners root:root ${MY_CGIBINDIR}/webdavwrapper
-	fperms 6755 ${MY_CGIBINDIR}/webdavwrapper
+	fowners root:root ${MY_CGIBINDIR}/${webDavWrapper}
+	fperms 6755 ${MY_CGIBINDIR}/${webDavWrapper}
 }
