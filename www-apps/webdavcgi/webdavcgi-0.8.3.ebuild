@@ -20,16 +20,16 @@ DEPEND=""
 RDEPEND="${DEPEND}
 	dev-perl/Archive-Zip
 	dev-perl/PerlIO-gzip
+	dev-perl/Quota
 	dev-perl/TimeDate
+	dev-perl/UUID-Tiny
 	dev-perl/XML-Simple
 	media-gfx/graphicsmagick[perl]
 	mysql? ( dev-perl/DBD-mysql )
 	perl-core/Module-Load
-	perl-gcpan/Quota
-	perl-gcpan/UUID-Tiny
 	postgres? ( dev-perl/DBD-Pg )
 	rcs? ( dev-perl/Rcs )
-	samba? ( perl-gcpan/Filesys-SmbClient )
+	samba? ( dev-perl/Filesys-SmbClient )
 	sqlite? ( dev-perl/DBD-SQLite )
 	virtual/perl-CGI
 "
