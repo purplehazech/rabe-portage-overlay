@@ -19,9 +19,11 @@ IUSE="mysql postgres rcs samba +sqlite"
 DEPEND=""
 RDEPEND="${DEPEND}
 	dev-perl/Archive-Zip
+	dev-perl/File-Copy-Link
 	dev-perl/PerlIO-gzip
 	dev-perl/Quota
 	dev-perl/TimeDate
+	dev-perl/URI
 	dev-perl/UUID-Tiny
 	dev-perl/XML-Simple
 	media-gfx/graphicsmagick[perl]
