@@ -18,20 +18,20 @@ IUSE="mysql postgres rcs samba +sqlite"
 
 DEPEND=""
 RDEPEND="${DEPEND}
-    dev-perl/Archive-Zip
-    dev-perl/PerlIO-gzip
-    dev-perl/TimeDate
-    dev-perl/XML-Simple
-    media-gfx/graphicsmagick[perl]
-    mysql? ( dev-perl/DBD-mysql )
-    perl-core/Module-Load
-    perl-gcpan/Quota
-    perl-gcpan/UUID-Tiny
-    postgres? ( dev-perl/DBD-Pg )
-    rcs? ( dev-perl/Rcs )
-    samba? ( perl-gcpan/Filesys-SmbClient )
-    sqlite? ( dev-perl/DBD-SQLite )
-    virtual/perl-CGI
+	dev-perl/Archive-Zip
+	dev-perl/PerlIO-gzip
+	dev-perl/TimeDate
+	dev-perl/XML-Simple
+	media-gfx/graphicsmagick[perl]
+	mysql? ( dev-perl/DBD-mysql )
+	perl-core/Module-Load
+	perl-gcpan/Quota
+	perl-gcpan/UUID-Tiny
+	postgres? ( dev-perl/DBD-Pg )
+	rcs? ( dev-perl/Rcs )
+	samba? ( perl-gcpan/Filesys-SmbClient )
+	sqlite? ( dev-perl/DBD-SQLite )
+	virtual/perl-CGI
 "
 
 need_httpd_cgi
@@ -61,21 +61,19 @@ src_install() {
 	exeinto "${MY_CGIBINDIR}"
 	doexe ${cgiBinDir}/*
 
-
 	local currentDir
-    for currentDir in ${installDirs}; do
+	for currentDir in ${installDirs}; do
 		dodir "${MY_HOSTROOTDIR}/${currentDir}"
 		insinto "${MY_HOSTROOTDIR}/${currentDir}"
 		doins -r ${currentDir}/*
 	done
 
-
 	webapp_configfile ${MY_HOSTROOTDIR}/${confDir}/{webdav.conf-dist,mime.types}
 
-	use mysql && webapp_sqlscript mysql sql/mysql.sql 
+	use mysql && webapp_sqlscript mysql sql/mysql.sql
 	use postgres && webapp_sqlscript postgres sql/postgresql.sql
 
-	dodoc CHANGELOG INSTALL LICENSE RELEASE TODO
+	dodoc CHANGELOG INSTALL RELEASE TODO
 	dohtml -r doc/*
 
 	webapp_src_install
