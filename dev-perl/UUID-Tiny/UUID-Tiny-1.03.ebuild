@@ -8,7 +8,7 @@ MODULE_AUTHOR=TOMZO
 MODULE_VERSION=1.03
 inherit perl-module
 
-DESCRIPTION="Perl interface to file system quotas"
+DESCRIPTION="UUID::Tiny - Pure Perl UUID Support With Functional Interface"
 
 SLOT="0"
 KEYWORDS="~amd64"
