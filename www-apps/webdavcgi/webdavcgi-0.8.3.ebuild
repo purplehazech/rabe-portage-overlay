@@ -4,7 +4,7 @@
 
 EAPI=4
 
-inherit toolchain-funcs webapp
+inherit eutils toolchain-funcs webapp
 
 DESCRIPTION="WebDAV CGI is a Perl CGI for accessing and sharing files, or calendar/addressbooks via WebDAV."
 HOMEPAGE="http://webdavcgi.sourceforge.net/"
@@ -40,6 +40,10 @@ need_httpd_cgi
 
 REQUIRED_USE="|| ( mysql postgres sqlite )"
 
+src_prepare() {
+	epatch "${FILESDIR}/${PV}-logout-var-expansion.patch"
+}
+
 src_compile() {
 	webDavWrapper='webdavwrapper'
 	cgiBinDir='cgi-bin'
@@ -61,7 +65,8 @@ src_install() {
 	doins -r ${htdocsDir}/*
 
 	exeinto "${MY_CGIBINDIR}"
-	doexe ${cgiBinDir}/*
+	newexe ${cgiBinDir}/logout-dist logout
+	doexe ${cgiBinDir}/{webdav.pl,webdavwrapper}
 
 	local currentDir
 	for currentDir in ${installDirs}; do
