@@ -83,6 +83,9 @@ src_install() {
 	dodoc CHANGELOG INSTALL RELEASE TODO
 	dohtml -r doc/*
 
+	webapp_hook_script "${FILESDIR}/reconfig"
+	webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
+
 	webapp_src_install
 
 	# In order to change the user and group ID at runtime, the webdavwrapper
