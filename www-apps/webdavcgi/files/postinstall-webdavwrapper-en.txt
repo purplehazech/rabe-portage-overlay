@@ -18,12 +18,15 @@ needs.
 
     RewriteEngine On
     RewriteRule ^/${VHOST_APPDIR}/logout /${VHOST_CGIBINDIR##*/}/logout [PT,E=REALM:WebDAV-CGI,E=HOMEURL:/${VHOST_APPDIR},L]
-    RewriteRule ^/${VHOST_APPDIR} /${VHOST_CGIBINDIR##*/}/webdav.pl [PT,E=WEBDAVCONF:${VHOST_ROOT}/etc/webdav.conf,E=PERLLIB:${VHOST_ROOT}/lib/perl,L]
+    RewriteRule ^/${VHOST_APPDIR} /${VHOST_CGIBINDIR##*/}/webdavwrapper [PT,E=WEBDAVCONF:${VHOST_ROOT}/etc/webdav.conf,E=PERLLIB:${VHOST_ROOT}/lib/perl,L]
 
 
 Afterwards you need to copy the default configuration file and edit it:
 cp -p ${VHOST_ROOT}/etc/{webdav.conf-dist,webdav.conf}
 \$EDITOR ${VHOST_ROOT}/etc/webdav.conf
+
+Also make sure that all system users which should be able to login to WebDAV CGI
+are able to access the installed files below ${VHOST_ROOT}.
 
 For further informations study the online documentation which is located at:
 http://webdavcgi.sourceforge.net/doc.html

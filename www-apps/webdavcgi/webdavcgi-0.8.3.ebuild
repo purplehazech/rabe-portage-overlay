@@ -14,7 +14,7 @@ LICENSE="GPL-3"
 SLOT="0"
 WEBAPP_MANUAL_SLOT="yes"
 KEYWORDS="~amd64"
-IUSE="mysql postgres rcs samba +sqlite"
+IUSE="mysql postgres rcs samba +sqlite +suid"
 
 DEPEND=""
 RDEPEND="${DEPEND}
@@ -45,12 +45,15 @@ src_prepare() {
 }
 
 src_compile() {
-	webDavWrapper='webdavwrapper'
 	cgiBinDir='cgi-bin'
 
-	$(tc-getCC) ${LDFLAGS} ${CFLAGS} \
-		-o ${cgiBinDir}/${webDavWrapper} \
-		helper/${webDavWrapper}.c || die "compile ${webDavWrapper} failed"
+	if use suid; then
+		webDavWrapper='webdavwrapper'
+
+		$(tc-getCC) ${LDFLAGS} ${CFLAGS} \
+			-o ${cgiBinDir}/${webDavWrapper} \
+			helper/${webDavWrapper}.c || die "compile ${webDavWrapper} failed"
+	fi
 }
 
 src_install() {
@@ -66,7 +69,9 @@ src_install() {
 
 	exeinto "${MY_CGIBINDIR}"
 	newexe ${cgiBinDir}/logout-dist logout
-	doexe ${cgiBinDir}/{webdav.pl,webdavwrapper}
+
+	doexe ${cgiBinDir}/webdav.pl
+	use suid && doexe ${cgiBinDir}/${webDavWrapper}
 
 	local currentDir
 	for currentDir in ${installDirs}; do
@@ -84,12 +89,20 @@ src_install() {
 	dohtml -r doc/*
 
 	webapp_hook_script "${FILESDIR}/reconfig"
-	webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
 
 	webapp_src_install
 
 	# In order to change the user and group ID at runtime, the webdavwrapper
 	# needs to be run as root (set-user-ID and set-group-ID bit)
-	fowners root:root ${MY_CGIBINDIR}/${webDavWrapper}
-	fperms 6755 ${MY_CGIBINDIR}/${webDavWrapper}
+	if use suid; then
+		einfo "Setting SUID and SGID bit for ${webDavWrapper}"
+		fowners root:root ${MY_CGIBINDIR}/${webDavWrapper}
+		fperms 6755 ${MY_CGIBINDIR}/${webDavWrapper}
+		webapp_postinst_txt en "${FILESDIR}/postinstall-${webDavWrapper}-en.txt"
+		webapp_hook_script "${FILESDIR}/reconfig-suid"
+	else
+		ewarn "You have the 'suid' USE flag disabled"
+		ewarn "WebDAV CGI won't be able to switch user ids"
+	    webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
+	fi
 }

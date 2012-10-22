@@ -1,11 +1,8 @@
 #!/bin/bash
 
-webDavWrapper="webdavwrapper"
 confDir="etc"
 distConfFile="webdav.conf-dist"
 
-chmodCmd="/bin/chmod"
-chownCmd="/bin/chown"
 sedCmd="/bin/sed"
 
 
@@ -15,22 +12,11 @@ function die ()
     	exit 1
 }
 
+
 if [ $1 != "install" ]; then
 	# nothing to be done, exit
 	exit 0
 fi
-
-# In order to change the user and group ID at runtime, the webdavwrapper
-# needs to be run as root (set-user-ID and set-group-ID bit)
-webDavWrapperPath="${VHOST_CGIBINDIR}/${webDavWrapper}"
-if ! ${chownCmd} root:root ${webDavWrapperPath}; then
-	die "Chown for ${webDavWrapperPath} failed"
-fi
-
-if ! ${chmodCmd} ug+s ${webDavWrapperPath}; then
-	die "set-user-id and set-group-id on ${webDavWrapperPath} failed"
-fi
-
 
 # Set the correct path within the config file
 distConfFilePath="${VHOST_ROOT}/${confDir}/${distConfFile}"
