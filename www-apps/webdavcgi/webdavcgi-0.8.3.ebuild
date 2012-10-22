@@ -103,6 +103,6 @@ src_install() {
 	else
 		ewarn "You have the 'suid' USE flag disabled"
 		ewarn "WebDAV CGI won't be able to switch user ids"
-	    webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
+		webapp_postinst_txt en "${FILESDIR}/postinstall-en.txt"
 	fi
 }
