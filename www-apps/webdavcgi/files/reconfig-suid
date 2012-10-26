@@ -23,11 +23,4 @@ if [ $1 = "install" ]; then
 	if ! ${chmodCmd} 6755 ${webDavWrapperPath}; then
 		die "Setting SUID and SGID bit on ${webDavWrapperPath} failed"
 	fi
-
-elif [ $1 = "clean" ]; then
-	# Removing set-user-id and set-group-id bit,
-	# otherwise unmerge will complain
-	if ! ${chmodCmd} ug-s ${webDavWrapperPath}; then
-		die "Removing SUID and SGID bit on ${webDavWrapperPath} failed"
-	fi
 fi
