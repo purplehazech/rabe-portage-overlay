@@ -23,7 +23,7 @@ src_unpack() {
 }
 
 src_install() {
-    insinto $(equery f mediawiki | grep extensions$)
+    insinto $(equery f mediawiki | grep extensions$)/LdapAuthentication
 	doins LdapAuthentication.php
 	doins LdapAutoAuthentication.php
 	doins LdapAuthentication.i18n.php
