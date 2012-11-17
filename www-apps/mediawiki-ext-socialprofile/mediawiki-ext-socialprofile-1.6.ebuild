@@ -49,7 +49,7 @@ src_install() {
 	doins UserActivity/UserActivity.body.php
 	doins UserActivity/UserActivity.css
 	doins UserActivity/SiteActivityHook.php
-	insinto $(equery f mediawiki | grep extensions$)/SocialProfile/UserBoards
+	insinto $(equery f mediawiki | grep extensions$)/SocialProfile/UserBoard
 	doins UserBoard/BoardBlast.js
 	doins UserBoard/UserBoard.i18n.php
 	doins UserBoard/SpecialSendBoardBlast.php
