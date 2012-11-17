@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>maintainer-needed@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+	    This extension allows integration with the web server's built-in 
+		authentication system via the REMOTE_USER environment variable, 
+		which is set through HTTP-Auth, LDAP, CAS, PAM, and other 
+		authentication systems.
+	</longdescription>
+</pkgmetadata>
