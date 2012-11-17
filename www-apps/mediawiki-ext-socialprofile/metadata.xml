@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer>
+		<email>maintainer-needed@gentoo.org</email>
+	</maintainer>
+	<longdescription>
+	    The SocialProfile extension incorporates a social profile, user board, and basic profile information into MediaWiki, 
+		specifically avatars, friending, foeing, user board, board blast, basic profile information, user levels rank system, 
+		awards and gifts. The package also notifies users via email when other users request them as a friend or foe and/or 
+		sends them a message.
+	</longdescription>
+</pkgmetadata>
