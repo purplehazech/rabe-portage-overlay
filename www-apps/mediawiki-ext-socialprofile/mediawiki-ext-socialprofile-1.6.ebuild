@@ -19,11 +19,11 @@ DEPEND="www-apps/mediawiki"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-    unpack ${A}
+	unpack ${A}
 }
 
 src_install() {
-    insinto $(equery f mediawiki | grep extensions$)/SocialProfile
+	insinto $(equery f mediawiki | grep extensions$)/SocialProfile
 	doins SocialProfile.php
 	doins SocialProfile.alias.php
 	doins SocialProfile.namespaces.php

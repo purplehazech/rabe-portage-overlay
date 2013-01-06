@@ -17,19 +17,16 @@ dev-php/PEAR-Console_Getopt
 dev-php/PEAR-Log"
 
 src_install() {
-	mkdir -p ${D}/usr/share/rabe-busmaster ${D}/usr/bin ${D}/etc/busmaster
-	cp -r src ${D}/usr/share/rabe-busmaster
-	cp -r lib ${D}/usr/share/rabe-busmaster
-	cp -r etc/* ${D}/etc/busmaster/
-	mv ${D}/etc/busmaster/init.d ${D}/etc/
-	#cp -r bin/rabe-busmaster ${D}/usr/bin/
-	mkdir ${D}/var/run/busmaster/
-	touch ${D}/var/run/busaster/.keep-rabe-busmaster
+	mkdir -p "${D}/usr/share/rabe-busmaster" "${D}/usr/bin ${D}/etc/busmaster"
+	cp -r src "${D}/usr/share/rabe-busmaster"
+	cp -r lib "${D}/usr/share/rabe-busmaster"
+	cp -r etc/* "${D}/etc/busmaster/"
+	mv "${D}/etc/busmaster/init.d" "${D}/etc/"
+	mkdir "${D}/var/run/busmaster/"
+	touch "${D}/var/run/busaster/.keep-rabe-busmaster"
 
-	ln -s /etc/busmaster ${D}/usr/share/rabe-busmaster/etc
+	ln -s /etc/busmaster "${D}/usr/share/rabe-busmaster/etc"
 
-	chown -R busmaster:busmaster ${D}/usr/share/puppet-infra-project
-	chmod u+x ${D}/etc/init.d/*
-	#chmod -R ugo-w ${D}/usr/share/puppet-infra-project
-	#chmod -R ugo=rx ${D}/usr/bin/rabe-busmaster
+	chown -R busmaster:busmaster "${D}/usr/share/puppet-infra-project"
+	chmod u+x "${D}/etc/init.d/*"
 }

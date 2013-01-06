@@ -19,11 +19,11 @@ DEPEND="www-apps/mediawiki"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-    unpack ${A}
+	unpack ${A}
 }
 
 src_install() {
-    insinto $(equery f mediawiki | grep extensions$)/LdapAuthentication
+	insinto $(equery f mediawiki | grep extensions$)/LdapAuthentication
 	doins LdapAuthentication.php
 	doins LdapAutoAuthentication.php
 	doins LdapAuthentication.i18n.php

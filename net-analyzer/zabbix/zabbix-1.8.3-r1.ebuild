@@ -1,6 +1,7 @@
 # Copyright 1999-2010 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/net-analyzer/zabbix/zabbix-1.8.3.ebuild,v 1.4 2010/09/12 16:09:28 josejx Exp $
+# @todo obsolete this by finally upgrading to zabbix-2 (repoman QS)
 
 EAPI="2"
 
@@ -10,7 +11,7 @@ inherit eutils flag-o-matic webapp depend.php
 
 DESCRIPTION="ZABBIX is software for monitoring of your applications, network and servers."
 HOMEPAGE="http://www.zabbix.com/"
-SRC_URI="http://prdownloads.sourceforge.net/zabbix/${P}.tar.gz 
+SRC_URI="http://prdownloads.sourceforge.net/zabbix/${P}.tar.gz
 	snmpbuilder? ( http://intranet.rabe.ch/pub/linux/zabbix/snmpbuilder-0.0.1.tar.gz )"
 LICENSE="GPL-2"
 SLOT="0"
@@ -49,7 +50,6 @@ src_unpack() {
 	cd "${S}"
 	epatch "${FILESDIR}"/snmpbuilder-0.0.1.patch
 }
-
 
 pkg_setup() {
 	if useq server || useq proxy ; then
@@ -308,7 +308,7 @@ src_install() {
 	if useq frontend; then
 		webapp_src_preinst
 		cp -R frontends/php/* "${D}/${MY_HTDOCSDIR}"
-		
+
 		if useq snmpbuilder; then
 			cp -R ../snmp_builder "${D}/${MY_HTDOCSDIR}/"
 			cp ../snmp_builder.php "${D}/${MY_HTDOCSDIR}"

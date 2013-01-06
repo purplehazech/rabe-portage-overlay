@@ -56,7 +56,6 @@ RDEPEND="${RDEPEND}
 
 SITEFILE="50${PN}-mode-gentoo.el"
 
-
 pkg_setup() {
 	enewgroup puppet
 	enewuser puppet -1 -1 /var/lib/puppet puppet

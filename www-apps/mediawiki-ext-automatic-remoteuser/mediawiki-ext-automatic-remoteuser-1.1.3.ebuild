@@ -19,10 +19,10 @@ DEPEND="www-apps/mediawiki"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-    unpack ${A}
+	unpack ${A}
 }
 
 src_install() {
-    insinto $(equery f mediawiki | grep extensions$)
+	insinto $(equery f mediawiki | grep extensions$)
 	doins Auth_remoteuser.php
 }

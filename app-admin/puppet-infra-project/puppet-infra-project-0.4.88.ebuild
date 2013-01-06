@@ -14,8 +14,8 @@ IUSE=""
 DEPEND="app-admin/puppet"
 
 src_install() {
-	mkdir -p ${D}/usr/share/puppet-infra-project
-	cp -r * ${D}/usr/share/puppet-infra-project/
-	chown -R puppet:puppet ${D}/usr/share/puppet-infra-project
-	chmod -R ugo-w ${D}/usr/share/puppet-infra-project
+	mkdir -p "${D}/usr/share/puppet-infra-project"
+	cp -r * "${D}/usr/share/puppet-infra-project/"
+	chown -R puppet:puppet "${D}/usr/share/puppet-infra-project"
+	chmod -R ugo-w "${D}/usr/share/puppet-infra-project"
 }

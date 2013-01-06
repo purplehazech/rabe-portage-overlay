@@ -15,7 +15,6 @@ IUSE=""
 
 DEPEND="virtual/libc"
 
-
 S="${WORKDIR}/${PN}"
 
 src_unpack() {
@@ -28,4 +27,3 @@ src_install() {
 	emake DESTDIR="${D}" install || die "Install failed"
 	dodoc EXAMPLES FAQS README ChangeLog || die
 }
-

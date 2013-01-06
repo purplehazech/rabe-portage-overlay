@@ -21,4 +21,3 @@ src_install() {
 	insinto /usr/share/php5/docs/
 	doins example-file.php  example-inline.php  readme.txt
 }
-

@@ -54,8 +54,8 @@ DEPEND="net-analyzer/net-snmp"
 RDEPEND="${DEPEND}"
 
 src_unpack() {
-	cd ${DISTDIR}
-	cp ${A} ${WORKDIR}
+	cd "${DISTDIR}"
+	cp ${A} "${WORKDIR}"
 }
 
 src_install() {
