@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: /var/cvsroot/gentoo-x86/app-admin/puppet/puppet-2.7.13.ebuild,v 1.7 2012/04/28 19:00:10 armin76 Exp $
 
