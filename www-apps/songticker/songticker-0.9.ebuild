@@ -6,7 +6,7 @@ DESCRIPTION="simple Songticker for Radio RaBe"
 HOMEPAGE="http://hairmare.ch/songticker/"
 SRC_URI="http://hairmare.ch/songticker/songticker-${PV}.tbz"
 
-LICENSE="GPL"
+LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""

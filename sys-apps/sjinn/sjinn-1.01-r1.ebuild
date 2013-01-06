@@ -8,7 +8,7 @@ DESCRIPTION="Intuitive cmd-line Linux serial communications designed for RS232 d
 HOMEPAGE="http://sjinn.sourceforge.net/"
 SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
 
-LICENSE="GPL"
+LICENSE="GPL-2+"
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""

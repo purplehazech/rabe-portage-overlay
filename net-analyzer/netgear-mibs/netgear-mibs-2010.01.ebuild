@@ -45,7 +45,9 @@ http://firmware.netgear-forum.com/mib/gsm7324_switching.mib
 http://firmware.netgear-forum.com/mib/power_ethernet.mib
 http://firmware.netgear-forum.com/mib/wg302user.mib"
 
-LICENSE="AS-IS-PROPRIETARY"
+LICENSE="
+	all-rights-reserved
+	ISOC-rfc"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
