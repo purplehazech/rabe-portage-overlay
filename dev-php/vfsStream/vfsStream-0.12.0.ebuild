@@ -12,7 +12,7 @@ inherit php-pear-lib-r1
 KEYWORDS="~amd64 ~x86"
 
 DESCRIPTION="vfsStream is a stream wrapper for a virtual file system that may be
-helpful in unit tests to mock the real file system."
+helpful in unit tests."
 HOMEPAGE="http://pear.bovigo.org/"
 LICENSE="BSD"
 SLOT="0"
