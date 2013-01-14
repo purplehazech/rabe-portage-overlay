@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		Installs a collection of MIBs collected by the netgear forums.
+		This contains MIBs need to interact with various netgear 
+		products over snmp.
+	</longdescription>
+</pkgmetadata>
+
