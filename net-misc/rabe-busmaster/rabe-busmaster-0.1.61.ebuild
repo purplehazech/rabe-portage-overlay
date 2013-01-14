@@ -15,6 +15,7 @@ DEPEND="dev-lang/php
 dev-php/pecl-zmq
 dev-php/PEAR-Console_Getopt
 dev-php/PEAR-Log"
+RDEPEND="${DEPEND}"
 
 src_install() {
 	mkdir -p "${D}/usr/share/rabe-busmaster" "${D}/usr/bin ${D}/etc/busmaster"

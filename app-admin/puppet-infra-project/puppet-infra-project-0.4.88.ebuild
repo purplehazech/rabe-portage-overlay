@@ -11,7 +11,9 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
+
 DEPEND="app-admin/puppet"
+RDEPEND="${RDEPEND}"
 
 src_install() {
 	mkdir -p "${D}/usr/share/puppet-infra-project"
