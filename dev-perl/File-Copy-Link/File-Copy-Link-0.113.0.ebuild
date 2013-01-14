@@ -1,4 +1,4 @@
-# Copyright 1999-2012 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -8,14 +8,15 @@ MODULE_AUTHOR=RMBARKER
 MODULE_VERSION=0.113
 inherit perl-module
 
-DESCRIPTION="File::Copy::Link - Perl extension for replacing a link by a copy of
-the linked file"
+DESCRIPTION="Perl extension for replacing a link by a copy of the linked file"
 
 SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-DEPEND="virtual/perl-Module-Build"
-RDEPEND=""
+RDEPEND="virtual/perl-File-Spec"
+DEPEND="virtual/perl-Module-Build
+	virtual/perl-File-Temp
+	${RDEPEND}"
 
 SRC_TEST="do"
