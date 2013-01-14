@@ -11,7 +11,6 @@ SLOT="0"
 KEYWORDS="~amd64"
 IUSE=""
 
-
 DEPEND="app-admin/puppet"
 RDEPEND="${RDEPEND}"
 
