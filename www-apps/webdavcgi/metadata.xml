@@ -2,7 +2,12 @@
 <!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
 <pkgmetadata>
 	<maintainer>
-		<email>maintainer-needed@gentoo.org</email>
+		<email>christian.affolter@stepping-stone.ch</email>
+		<description>Maintainer</description>
+	</maintainer>
+	<maintainer>
+		<email>dev-zero@gentoo.org</email>
+		<description>Proxy maintainer</description>
 	</maintainer>
 	<longdescription>
 		WebDAV CGI is a Perl CGI script that enables the WebDAV protocol
@@ -14,9 +19,9 @@
 		as a complete replacement.
 	</longdescription>
 	<use>
-		<flag name="rcs">
-			Adds support for a revision controlled backend with RCS
-			(<pkg>dev-vcs/rcs</pkg>)
-		</flag>
+		<flag name="rcs">Adds support for a revision controlled backend with RCS (<pkg>dev-vcs/rcs</pkg>)</flag>
 	</use>
+	<upstream>
+		<remote-id type="sourceforge">webdavcgi</remote-id>
+	</upstream>
 </pkgmetadata>
