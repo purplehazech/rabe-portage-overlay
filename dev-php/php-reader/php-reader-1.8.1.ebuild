@@ -1,4 +1,4 @@
-# Copyright 1999-2010 Gentoo Foundation
+# Copyright 1999-2013 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
 # $Header: $
 
@@ -6,7 +6,7 @@ DESCRIPTION="PHP library for Object-Oriented media file information reading and 
 HOMEPAGE="http://code.google.com/p/php-reader/"
 SRC_URI="http://php-reader.googlecode.com/files/php-reader-${PV}.tar.bz2"
 
-LICENSE="NEW-BSD"
+LICENSE="BSD"
 SLOT="0"
 KEYWORDS="~x86 ~amd64"
 IUSE=""
@@ -16,8 +16,7 @@ RDEPEND="$DEPEND"
 
 src_install() {
 	insinto /usr/share/php
-    doins -r library/Zend
+	doins -r library/Zend
 	insinto /usr/share/php/docs/
 	doins -r docs/Zend_Media
 }
-

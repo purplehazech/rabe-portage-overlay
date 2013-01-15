@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		S-Jinn is a free, lightweight, open-source Linux application written in C. 
+		It is a simple command-line tool designed for sending &amp; receiving data 
+		from PC controlled TIA/EIA-232 (RS-232) test, measurement, and control 
+		devices.
+	</longdescription>
+</pkgmetadata>
+

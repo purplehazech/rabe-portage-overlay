@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		PHP Reader is a well documented small library written in PHP to read and 
+		write media files and their information headers in an object-oriented 
+		manner. Currently supported formats are ASF (Windows Media Player files, 
+		ie WMA, WMV, etc), ID3, including both ID3v1 and ID3v2 (MPEG files, ie MP3), 
+		MPEG Audio Bit Stream (ie ABS, MP1, MP2, MP3), MPEG Program Stream (MPEG 
+		movies, and DVD and HD DVD video discs, ie MPG, MPEG, VOB, EVO), and ISO 
+		Base Media File Format (eg QuickTime, MPEG-4 and iTunes AAC files, ie QT, 
+		MOV, MP4, M4A, M4B, M4P, M4V, etc).
+	</longdescription>
+</pkgmetadata>
+

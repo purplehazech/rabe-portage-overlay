@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "http://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<longdescription lang="en">
+		vfsStream is a PHP stream wrapper for a virtual file system that may be 
+		helpful in unit tests to mock the real file system. It can be used with 
+		any unit test framework, like PHPUnit or SimpleTest.
+	</longdescription>
+</pkgmetadata>
+
