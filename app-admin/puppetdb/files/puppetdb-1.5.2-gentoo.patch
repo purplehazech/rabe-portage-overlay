@@ -1,0 +1,35 @@
+--- ruby19/puppetdb-1.5.2/Rakefile-orig	2014-01-24 00:51:03.060239909 +0000
++++ ruby19/puppetdb-1.5.2/Rakefile	2014-01-24 00:50:42.592638582 +0000
+@@ -4,6 +4,8 @@
+ 
+ JAR_FILE = 'puppetdb.jar'
+ 
++@version = "0.0-dev-build"
++
+ RAKE_ROOT = File.dirname(__FILE__)
+ 
+ # Load tasks and variables for packaging automation
+--- ruby19/puppetdb-1.5.2/tasks/tar.rake-orig	2014-01-24 11:11:02.824006307 +0000
++++ ruby19/puppetdb-1.5.2/tasks/tar.rake	2014-01-24 11:10:53.184781211 +0000
+@@ -25,7 +25,7 @@
+   File.open(File.join(workdir,'version'), File::CREAT|File::TRUNC|File::RDWR, 0644) do |f|
+     f.puts @version
+   end
+-  mv "#{workdir}/ext/files/debian", "#{workdir}/ext"
++  #mv "#{workdir}/ext/files/debian", "#{workdir}/ext"
+   cp_pr "puppet", "#{workdir}/ext/master"
+   mkdir_p "pkg"
+   pkg_dir = File.expand_path(File.join(".", "pkg"))
+--- ruby19/puppetdb-1.5.2/tasks/install.rake-orig	2014-01-25 12:06:56.509853550 +0000
++++ ruby19/puppetdb-1.5.2/tasks/install.rake	2014-01-25 12:27:34.884244567 +0000
+@@ -73,6 +73,10 @@
+     mkdir_p "#{DESTDIR}/etc/rc.d/"
+     cp_p "ext/files/puppetdb.openbsd.init", "#{DESTDIR}/etc/rc.d/#{@name}.rc"
+     chmod 0755, "#{DESTDIR}/etc/rc.d/#{@name}.rc"
++  elsif @osfamily == "gentoo"
++    mkdir_p "#{DESTDIR}/etc/init.d"
++    cp_p  "ext/files/#{@name}.debian.init", "#{DESTDIR}/etc/init.d/#{@name}"
++    chmod 0755, "#{DESTDIR}/etc/init.d/#{@name}"
+   else
+     raise "Unknown or unsupported osfamily: #{@osfamily}"
+   end
